@@ -1,0 +1,64 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "volumes": [
+      {
+        "name": "webapp",
+        "host": {
+          "sourcePath": "/var/app/current/webapp"
+        }
+      },
+      {
+        "name": "webapi",
+        "host": {
+          "sourcePath": "/var/app/current/webapi"
+        }
+      }
+    ],
+
+    "containerDefinitions": [
+      {
+        "name": "webapp",
+        "image": "multicontainer-webapp:prod1",
+        "essential": true,
+        "memory": 128,
+        "portMappings": [
+            {
+              "hostPort": 8080,
+              "containerPort": 8080
+            }
+          ],
+        "mountPoints": [
+          {
+            "sourceVolume": "webapp",
+            "containerPath": "/var/www/webapp",
+            "readOnly": true
+          }
+        ]
+      },
+      {
+        "name": "webapi",
+        "image": "multicontainer-webap1:prod1",
+        "essential": true,
+        "memory": 128,
+        "portMappings": [
+            {
+              "hostPort": 8081,
+              "containerPort": 8081
+            }
+          ],
+        "mountPoints": [
+          {
+            "sourceVolume": "webap1",
+            "containerPath": "/var/www/webapi",
+            "readOnly": true
+          }
+        ]
+      }
+
+
+
+
+
+
+    ]
+  }
