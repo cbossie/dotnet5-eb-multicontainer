@@ -4,10 +4,12 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>19484931-ba0d-42dd-b42b-7c0070d7d5ab</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileRunEnvironmentFiles>settings.env</DockerfileRunEnvironmentFiles>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
 </Project>

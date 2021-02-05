@@ -5,8 +5,10 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
+
 FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
 WORKDIR /src
+
 COPY ["WebApi/WebApi.csproj", "WebApi/"]
 RUN dotnet restore "WebApi/WebApi.csproj"
 COPY . .

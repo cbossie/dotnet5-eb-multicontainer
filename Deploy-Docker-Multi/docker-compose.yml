@@ -1,0 +1,18 @@
+version: '2.4'
+services:
+  video-webapp:
+    image: 020698190649.dkr.ecr.us-east-2.amazonaws.com/video-webapp:latest
+    volumes:
+      - "./webapp:/var/www/webapp/files"
+      - "${EB_LOG_BASE_DIR}/webapp:/var/log/video-webapp"
+    environment:
+      API_HOST: video-webapi
+    mem_limit: 128m
+    ports:
+      - "80:80"
+  video-webapi:
+    image: 020698190649.dkr.ecr.us-east-2.amazonaws.com/video-webapi:latest
+    volumes:
+      - "./webapi:/var/www/webapi/files"
+      - "${EB_LOG_BASE_DIR}/webapp:/var/log/video-webapi"
+    mem_limit: 128m

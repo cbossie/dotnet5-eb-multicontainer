@@ -12,6 +12,7 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
+        "API_HOST": "localhost:51731",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
@@ -28,6 +29,11 @@
       "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "API_HOST_OLD": "172.17.0.3:80",
+        "API_HOST": "localhost:51731",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
       "publishAllPorts": true,
       "useSSL": true
     }

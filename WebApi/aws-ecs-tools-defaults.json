@@ -1,9 +1,9 @@
 
 {
-    "region" : "us-east-1",
+    "region" : "us-east-2",
     "profile" : "default",
     "configuration" : "Release",
-    "image-tag"     : "multicontainer-webapi:prod1",
+    "image-tag"     : "video-webapi:latest",
     "docker-build-working-dir" : "",
     "vstoolkit-deployment-mode" : "PushOnly"
 }

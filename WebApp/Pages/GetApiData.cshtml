@@ -1,0 +1,17 @@
+﻿@page
+@model WebApp.Pages.GetApiDataModel
+@{
+}
+
+<p>Here is your weather data:</p>
+<ul>
+    @foreach (var wd in Model.Data)
+    {
+        <li>
+            <div>@wd.Date.ToShortDateString()</div>
+            <div>Summary: @wd.Summary</div>
+            <div>Temperature: @wd.TemperatureF &deg;F</div>
+        </li>
+    }
+
+</ul>

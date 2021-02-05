@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApp.Model;
+using WebApp.Service;
 
 namespace WebApp
 {
@@ -23,6 +25,14 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(new ApiConfig
+            {
+                ApiHost = Environment.GetEnvironmentVariable("API_HOST")
+            });            
+            services.AddTransient<IWeatherDataService, WeatherDataService>();
+
+
+
             services.AddRazorPages();
         }
 
